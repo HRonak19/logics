@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<conio.h>
 
-int Arithmetic_operators() // this function is use for Arithmetic operators select and return the selection 
+int Arithmetic_operators() // this function is use for Arithmetic operators select and return the selection to a main function
 {
     int select_Arithmetic_operators;
     printf("\n| 1 Addition \n| 2 Subtraction \n| 3 Multiplication \n| 4 Division  \n| 5 ALL IN ONE \n|--> ");
@@ -10,7 +10,7 @@ int Arithmetic_operators() // this function is use for Arithmetic operators sele
     return select_Arithmetic_operators;
 }
 
-int Number_system()
+int Number_system() // this function is use for Number system operation  return to a main function
 {
     int select_Number_system;
 
@@ -20,13 +20,14 @@ int Number_system()
     return select_Number_system;
 }
 
+    // here all ARITHMETIC operational functions
     void Addition();
     void Subtraction();
     void Multiplication();
     void Division();
     void all();
     
-
+    // here all number system functions
     void sum();
     void palindrome();
     void factorial();
