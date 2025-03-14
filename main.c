@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<conio.h>
+#include<unistd.h>
 
 int Arithmetic_operators() // this function is use for Arithmetic operators select and return the selection to a main function
 {
@@ -14,7 +15,7 @@ int Number_system() // this function is use for Number system operation  return 
 {
     int select_Number_system;
 
-    printf("\n| 1 Sum of 1 to user Numbers \n| 2 chack Palindrome Number \n| 3 find Factorial Number \n| 4 Armstrong Number \n| 5 Fibonacci Number \n| 6 Prime Number \n|--> ");
+    printf("\n| 1 Sum of 1 to user Numbers \n| 2 chack Palindrome Number \n| 3 find Factorial Number \n| 4 Armstrong Number \n| 5 Fibonacci Number \n| 6 Prime Number \n| 7 Number Swaping \n|--> ");
     scanf("%d",&select_Number_system);
 
     return select_Number_system;
@@ -34,13 +35,14 @@ int Number_system() // this function is use for Number system operation  return 
     void armstrong();
     void fibonacci();
     void prime();
+    int swap();
 
 int exit(int);
 
 void main()
 {
     int select;
-        int select_Arithmetic,select_Number;
+        int select_Arithmetic,select_Number,select_Swap;
 
         system("cls");
 
@@ -138,12 +140,19 @@ void main()
                                 main();
                             break;
 
+                            case 7:
+                                  swap();
+                                    getch();
+                                main();
+                            break;
+
                         default:
                             break;
                         }
             break;
             
             case 0:
+                creator();
                 exit(0);
             break;
 
@@ -157,8 +166,7 @@ void main()
 getch();
 }
 
-void Addition()
-{
+void Addition(){
     int First,Second;
 
         printf("| Enter First Digite : ");
@@ -169,8 +177,7 @@ void Addition()
     printf("|--> Here is the Addition of  %d + %d = %d",First,Second,First+Second);
 
 }
-void Subtraction()
-{
+void Subtraction(){
     int First,Second;
 
         printf("| Enter First Digite : ");
@@ -181,8 +188,7 @@ void Subtraction()
     printf("|--> Here is the  of Subtraction %d - %d = %d",First,Second,First-Second);
 
 }
-void Multiplication()
-{
+void Multiplication(){
     int First,Second;
 
         printf("| Enter First Digite : ");
@@ -193,8 +199,7 @@ void Multiplication()
     printf("|--> Here is the  of Multiplication %d * %d = %d",First,Second,First*Second);
 
 }
-void Division()
-{
+void Division(){
     int First,Second;
 
         printf("| Enter First Digite : ");
@@ -205,8 +210,7 @@ void Division()
     printf("|--> Here is the  of Division %d / %d = %d",First,Second,First/Second);
 
 }
-void all()
-{
+void all(){
     int a,b;
         printf("Enter First number : ");
         scanf("%d",&a);
@@ -216,8 +220,7 @@ void all()
         printf("Sum   : %d \nSub   : %d \nMulti : %d \nDivi  : %d \nMode  : %d",a+b,a-b,a*b,a/b,a%b);
 }
 
-void sum()
-{
+void sum(){
     int user,total=0;
 
         printf("| Enter Your number :");
@@ -236,8 +239,7 @@ void sum()
             }
             printf("%d ",total);
 }
-void palindrome()
-{
+void palindrome(){
     int user,rast,revers=0,tamp;
 
         printf("| Enter any number to chack it palindrome or not : ");
@@ -258,8 +260,7 @@ void palindrome()
                 printf("|--> %d is not a palindrome number !",revers);
             
 }
-void factorial()
-{
+void factorial(){
     int user,total=1;
 
         printf("| Enter any number : ");
@@ -281,8 +282,7 @@ void factorial()
             }
             printf("%d ",total);
 }
-void armstrong()
-{
+void armstrong(){
     int user,r,revers=0,tamp;
 
         printf("Enter any number to chack armstrong or not : ");
@@ -307,9 +307,7 @@ void armstrong()
             
 
 }
-void fibonacci()
-
-{
+void fibonacci(){
     int n,a=0,b=1;
 
         printf("Enter any number : ");
@@ -326,8 +324,8 @@ void fibonacci()
                 b=tamp;
             }
 }
-void prime()
-{
+void prime(){
+
     int n,c=0;
 
         printf("Enter any number :");
@@ -364,4 +362,80 @@ void prime()
             }
     
     } 
+}
+int swap()
+{
+    int N1,N2,selectS;
+
+    printf("1.First logic \n2.Second logic \n3.Last logic \n:");
+    scanf("%d",&selectS);
+
+    printf("Enter First number : ");
+    scanf("%d",&N1);
+    printf("Enter Second number : ");
+    scanf("%d",&N2);
+
+
+        if(selectS==1)
+        {
+            swap1(N1,N2);
+        }
+        else if(selectS==2)
+        {
+             swap2( N1, N2);
+        }
+        else if(selectS==3)
+        {
+            swap3( N1, N2);
+        }
+        else
+            printf("select right number !");
+
+
+    return selectS;
+        
+    
+}
+
+        void swap1(int N1,int N2)
+        {
+            int MT;
+                MT = N1;
+                N1 = N2;
+                N1 = MT; 
+    
+            printf("%d %d",N1,N2);
+        }
+        void swap2(int N1,int N2)
+{
+    N1 = N1 + N2;
+    N2 = N1 - N2;
+    N1 = N1 - N2;  
+
+    printf("%d %d",N1,N2);
+
+}
+        void swap3(int N1,int N2)
+        {
+
+            N1 = N1 * N2;
+            N2 = N1 / N2;    
+            N1 = N1 / N2;
+
+            printf("%d %d",N1,N2);
+        }
+
+
+
+void creator()
+{
+    char name[15]="Ronak Hedambha";
+
+        sleep(2);
+        printf("created by -: ");
+    for(int i=0; i<=15; i++)
+    {
+        printf("%c",name[i]);
+        sleep(1);
+    }
 }
