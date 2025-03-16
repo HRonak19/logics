@@ -397,8 +397,7 @@ int swap()
     
 }
 
-        void swap1(int N1,int N2)
-        {
+        void swap1(int N1,int N2){
             int MT;
                 MT = N1;
                 N1 = N2;
@@ -406,17 +405,16 @@ int swap()
     
             printf("%d %d",N1,N2);
         }
-        void swap2(int N1,int N2)
-{
-    N1 = N1 + N2;
-    N2 = N1 - N2;
-    N1 = N1 - N2;  
 
-    printf("%d %d",N1,N2);
+        void swap2(int N1,int N2){
+            N1 = N1 + N2;
+            N2 = N1 - N2;
+            N1 = N1 - N2;  
 
-}
-        void swap3(int N1,int N2)
-        {
+            printf("%d %d",N1,N2);
+        } 
+
+        void swap3(int N1,int N2){
 
             N1 = N1 * N2;
             N2 = N1 / N2;    
@@ -435,7 +433,7 @@ void creator()
         printf("created by -: ");
     for(int i=0; i<=15; i++)
     {
-        printf("%c",name[i]);
         sleep(1);
+        printf("%c",name[i]);
     }
 }
