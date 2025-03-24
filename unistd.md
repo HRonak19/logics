@@ -76,18 +76,16 @@ int main() {
 
     return 0;
 }
-
-output
-
+```
+> output
+```
 File 'example.txt' exists.
 
 File 'example.txt' does not exist.
-
+```
 
 ** Check a Directory **
-
-*code*
-
+```
 #include <stdio.h>
 #include <unistd.h>
 
