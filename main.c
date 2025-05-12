@@ -152,7 +152,7 @@ void main()
             break;
             
             case 0:
-                creator();
+                creatordata();
                 exit(0);
             break;
 
@@ -367,7 +367,7 @@ int swap()
 {
     int N1,N2,selectS;
 
-    printf("1.First logic \n2.Second logic \n3.Last logic \n:");
+    printf("1.First logic \n2.Second logic \n3.thaird logic \n4.last logic \n:");
     scanf("%d",&selectS);
 
     printf("Enter First number : ");
@@ -388,11 +388,17 @@ int swap()
         {
             swap3( N1, N2);
         }
-        else
+        else if(selectS==4)
+        {
+            swap4(&N1,&N2);
+        }else{
             printf("select right number !");
+        }
 
+        printf("N1 is %d\n",N1);
+        printf("N2 is %d",N2);
 
-    return selectS;
+    //return selectS;
         
     
 }
@@ -423,9 +429,16 @@ int swap()
             printf("%d %d",N1,N2);
         }
 
+        void swap4(int *N1,int *N2)  // swap two numbers with using address of the variable 
+        {
+            int tamp= *N1;
+            *N1 = *N2;
+            *N2 = tamp;
+        }
 
 
-void creator()
+
+void creatordata()
 {
     char name[15]="Ronak Hedambha";
 
@@ -435,5 +448,5 @@ void creator()
     {
         sleep(1);
         printf("%c",name[i]);
-    }
+    } 
 }
